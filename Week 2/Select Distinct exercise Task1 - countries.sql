@@ -1,0 +1,2 @@
+select Country 
+from Customers
