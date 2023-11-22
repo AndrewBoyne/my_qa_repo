@@ -65,7 +65,16 @@ SELECT count (*) -- or (@@CURSOR_ROWS)
    select count (gender)
    from Seattle_cycles_trip
    where gender ='Male'
-   and starttime like '2015%';       -- gets the info.  now need to sum the column gender?  Answer  70,047
+   and starttime like '2015%';       -- gets the info.  now need to sum the column gender?  Answer  84,908
+
+
+   -- or can use
+
+   select count (*)
+   from Seattle_cycles_trip
+    where gender ='Male'
+   and starttime like '2015%';
+
 
 -- Q10 How many rows do not have nulls for the column birth year?
 
@@ -74,13 +83,13 @@ select * from Seattle_cycles_trip
 select count (birthyear)
 birthyear
  from Seattle_cycles_trip
- where birthyear is not null -- Answer 118,689
+ where birthyear is not null -- Answer 181,553
 
  -- Q11 How old was the youngest rider that we know about?
 
 select * from Seattle_cycles_trip
 
-select
+select top 1
 trip_id
 , usertype
 , birthyear
@@ -132,13 +141,13 @@ order by 'Difference between Max and Min Temp' desc -- Answer is 2016-08-19 - Di
 
 -- Q16 Summarise the average humidity per month (all years)
 
-select * from Seattle_weather_daily
+select * from Seattle_weather_conditions
 
 select 
 year (Date) as 'Month'
 , month (Date) as Year
 , Mean_Humidity
-from Seattle_weather_daily
+from Seattle_weather_conditions
 --group by month (Date);
 order by year (Date)
 
@@ -146,17 +155,19 @@ select
 year (Date) as 'Year'
 , month (Date) as Month
 , Mean_Humidity
-from Seattle_weather_daily
+from Seattle_weather_conditions
 --group by month (Date);
 order by year (Date) -- this gives the years and months with their mean humidity but does not summarise
 
 select 
 month (Date) as 'Month'
 , avg(Mean_humidity) as 'Average Humidity'
-from Seattle_weather_daily
+from Seattle_weather_conditions
 group by month(Date) -- Answer given in Ave Humidity as first column
 
+-- Q17 Which month(s) in 2015 saw the highest max windspeed (not gusts) recorded?
 
+select * from Seattle_weather_conditions
 
 
 
