@@ -47,7 +47,7 @@ SELECT count (*) -- or (@@CURSOR_ROWS)
   select * from Seattle_cycles_trip
 
   select avg((tripduration)/60)
-  from Seattle_cycles_trip -- this is in seconds so we need to divide by 60.  Andswer - 19.6322212657091
+  from Seattle_cycles_trip -- this is in seconds so we need to divide by 60.  Andswer - 19.6388577044687
 
   -- Q8 From which station did the largest number of individual trips begin?
 
@@ -110,7 +110,7 @@ where from_station_name = to_station_name  -- gives all the info.  Now need to c
 
 select count (*) from_station_name
 from Seattle_cycles_trip
-where from_station_name = to_station_name -- tried to use Trip ID to give more columns.  Answer is 15,282
+where from_station_name = to_station_name -- tried to use Trip ID to give more columns.  Answer is 23,091
 
 -- Q13 how many unique bikes were rented per year by short term pass holders?
 
@@ -120,7 +120,7 @@ select count (distinct bikeid) as 'Unique bikes'-- distinct shows each bikeid on
 , year (starttime) as 'Year' -- using function rather than grouping by 
 from Seattle_cycles_trip 
 where usertype = 'Short-Term Pass Holder' -- to distinguish between types
-group by year (starttime) -- won't work without this                          Answer is 2014 - 474.  2015 - 468
+group by year (starttime) -- won't work without this              Answer is 2014 - 474.  2015 - 468. 2015 - 459
 
 -- Q14 What is the earliest and latest dates we have in the Seattle_weather_conditions table?
 
@@ -136,7 +136,7 @@ select * from Seattle_weather_daily
 select
 Date
 , (Max_Temperature_F - Min_TemperatureF) as 'Difference between Max and Min Temp'
-from Seattle_weather_daily
+from Seattle_weather_conditions
 order by 'Difference between Max and Min Temp' desc -- Answer is 2016-08-19 - Diff was 69
 
 -- Q16 Summarise the average humidity per month (all years)
@@ -203,7 +203,7 @@ where not events = 'rain' --the answer is 41 (from looking down the table) but I
 select 
 count (Events) as 'Days where not just rain in Events'
 from Seattle_weather_conditions
-where not events = 'rain'
+where not events = 'rain' -- Answer 41
 
 -- Q19 What was the total rainfall accumulation (inches) during the first 3 months of 2016?
 
@@ -231,6 +231,7 @@ select * from Seattle_weather_conditions
 
 select
 count (Events) as 'Number of days where fog was reported'
+
 from Seattle_weather_conditions
 where events like '%Fog%' --answer 29
 
