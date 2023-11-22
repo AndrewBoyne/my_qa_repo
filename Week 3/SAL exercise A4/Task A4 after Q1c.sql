@@ -40,8 +40,8 @@ select * from Seattle_cycles_trip
 -- order by count (from_station_name)
  
   select 
-distinct bikeid
-, (from_station_name) as 'Location'
+count (distinct bikeid) as 'Unique bikes borrowed'
+--, (from_station_name) as 'Location'
  from Seattle_cycles_trip
  where from_station_name='Pier 69 / Alaskan Way & Clay St'
  --group by from_station_name
