@@ -52,13 +52,13 @@ count (distinct bikeid) as 'Unique bikes borrowed'
 select * from Seattle_cycles_trip
 
 select 
-	--s.station_id
-	t.from_station_name
+	--s.station_id  --not required on the select section
+	t.from_station_name -- do not need to select columns and then do the count, sum or avg functions.  Enough to write the function
 	,count(t.trip_id) as 'Total Trips'
 	,count (distinct t.bikeid) as 'Bikes taken from station'
 	,round(avg(t.tripduration) /60, 0) as 'Average Duration'
 	from Seattle_cycles_station as s
 	join Seattle_cycles_trip  as t
 	on s.station_id=t.from_station_id
-	group by t.from_station_id, t.from_station_name
+	group by t.from_station_id, t.from_station_name -- dont need a where... because we can see the most popular station
 	order by 'Total Trips' desc
