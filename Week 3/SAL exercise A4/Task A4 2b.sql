@@ -68,3 +68,15 @@ select
 --2.	How many trips were taken from this station?														13,054
 --3.	How many unique bikes were borrowed from this station?												485
 --4.	What was the average trip duration (rounded to the nearest number of minutes) from this station?	35
+
+--On which dates did it snow in Seattle?
+
+select Date 
+	,events
+	from Seattle_weather_conditions
+	where events like '%Snow%'             --Answer 5 days.  2014-11-29, 2015-11-28, 2015-12-14, 2016-01-03, 2016-01-15
+
+	cast(t.starttime as Date)
+	from Seattle_cycles_trip  as t
+	join Seattle_weather_conditions as w
+	on t.Date=w.Date
