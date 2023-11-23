@@ -4,13 +4,13 @@
 SELECT count (*) -- or (@@CURSOR_ROWS)
   FROM [Seattle_cyclehire].[dbo].[Seattle_cycles_station] 
 
--- Q2 How many unique station IDs are there?  Answer - 58
+-- Q2 How many unique station IDs are there?  Answer - 58 Correct
 
   select * from Seattle_cycles_station -- gives all overall info
 
   select distinct station_id from Seattle_cycles_station 
 
--- Q3 Which cycle stations (names) have been decommissioned?  Answer - 4
+-- Q3 Which cycle stations (names) have been decommissioned?  Answer - 4 Correct
   
  select name
  , decommission_date
@@ -23,7 +23,7 @@ SELECT count (*) -- or (@@CURSOR_ROWS)
 
  select sum (install_dockcount) 
  from Seattle_cycles_station
- where decommission_date is not null -- Answer 68
+ where decommission_date is not null -- Answer 68  Correct
 
  -- Q5 What was the earliest date and the latest date that cycle stations were installed?
 
@@ -31,13 +31,13 @@ SELECT count (*) -- or (@@CURSOR_ROWS)
 
   select max(install_date), min(install_date) from Seattle_cycles_station -- Answer - Latest date - 2016-08-09 
   -- or both queries
-  select min(install_date) from Seattle_cycles_station -- Answer - Earliest date - 2014-10-13 
+  select min(install_date) from Seattle_cycles_station -- Answer - Earliest date - 2014-10-13 Correct
 
   -- Q6 How many unique trips are there overall?  Does that match the number of rows in the Seattle_cycles_trip table?
 
   select * from Seattle_cycles_trip
 
-  select count(*) trip_id from Seattle_cycles_trip -- Answer - 187,800, part 2 - yes
+  select count(*) trip_id from Seattle_cycles_trip -- Answer - 187,800, part 2 - yes  Wrong
 
   SELECT count (*) -- or (@@CURSOR_ROWS)
   FROM [Seattle_cycles_trip]
@@ -47,7 +47,8 @@ SELECT count (*) -- or (@@CURSOR_ROWS)
   select * from Seattle_cycles_trip
 
   select avg((tripduration)/60)
-  from Seattle_cycles_trip -- this is in seconds so we need to divide by 60.  Andswer - 19.6388577044687
+  from Seattle_cycles_trip -- this is in seconds so we need to divide by 60.  
+  -- Answer - 19.6388577044687 Correct
 
   -- Q8 From which station did the largest number of individual trips begin?
 
@@ -57,6 +58,7 @@ SELECT count (*) -- or (@@CURSOR_ROWS)
  from Seattle_cycles_trip
  group by from_station_name
  order by 'Number of Trips' desc  -- Answer Number of Trips	from_station_name 8269	Pier 69 / Alaskan Way & Clay St
+ -- Corrct
 
  -- Q9 How many male members of the cycle hire scheme made trips in 2015?
 
@@ -65,7 +67,8 @@ SELECT count (*) -- or (@@CURSOR_ROWS)
    select count (gender)
    from Seattle_cycles_trip
    where gender ='Male'
-   and starttime like '2015%';       -- gets the info.  now need to sum the column gender?  Answer  84,908
+   and starttime like '2015%';       -- gets the info.  now need to sum the column gender?  
+   -- Answer  84,908  Correct
 
 
    -- or can use
@@ -95,7 +98,8 @@ trip_id
 , birthyear
 from Seattle_cycles_trip
 where birthyear is not null
-order by birthyear desc  -- assuming it is now 2023, the answer is 24 (the most recent birth year is 1999)
+order by birthyear desc  -- assuming it is now 2023, the answer is 24 (the most recent birth year 
+-- is 1999)  Correct
 
 -- Q12 How many total trips started and ended at the same station?
 
@@ -110,7 +114,8 @@ where from_station_name = to_station_name  -- gives all the info.  Now need to c
 
 select count (*) from_station_name
 from Seattle_cycles_trip
-where from_station_name = to_station_name -- tried to use Trip ID to give more columns.  Answer is 23,091
+where from_station_name = to_station_name -- tried to use Trip ID to give more columns.  
+--Answer is 23,091  Correct
 
 -- Q13 how many unique bikes were rented per year by short term pass holders?
 
@@ -120,7 +125,8 @@ select count (distinct bikeid) as 'Unique bikes'-- distinct shows each bikeid on
 , year (starttime) as 'Year' -- using function rather than grouping by 
 from Seattle_cycles_trip 
 where usertype = 'Short-Term Pass Holder' -- to distinguish between types
-group by year (starttime) -- won't work without this              Answer is 2014 - 474.  2015 - 468. 2015 - 459
+group by year (starttime) -- won't work without this              
+-- Answer is 2014 - 474.  2015 - 468. 2015 - 459  Correct
 
 -- Q14 What is the earliest and latest dates we have in the Seattle_weather_conditions table?
 
@@ -137,7 +143,7 @@ select
 Date
 , (Max_Temperature_F - Min_TemperatureF) as 'Difference between Max and Min Temp'
 from Seattle_weather_conditions
-order by 'Difference between Max and Min Temp' desc -- Answer is 2016-08-19 - Diff was 69
+order by 'Difference between Max and Min Temp' desc -- Answer is 2016-08-19 - Diff was 69  Correct
 
 -- Q16 Summarise the average humidity per month (all years)
 
@@ -185,7 +191,8 @@ year (Date) as Year -- to be able to distinguish between months and  years
 from Seattle_weather_conditions
 --where year (Date) = 2015
 group by month (Date), year (Date)
-order by 'Maximum wind speed'desc --order by Max_Wind_Speed_MPH desc -- to arrange from highest to lowest.  Answer is December 2015, Max winde speed 30mph
+order by 'Maximum wind speed'desc --order by Max_Wind_Speed_MPH desc -- to arrange from highest to lowest.  
+--Answer is December 2015, Max wind speed 30mph  Correct
 
 -- Q18 On how many days were weather events other than simply rain (storm, fog, etc) recorded?
 
@@ -203,7 +210,7 @@ where not events = 'rain' --the answer is 41 (from looking down the table) but I
 select 
 count (Events) as 'Days where not just rain in Events'
 from Seattle_weather_conditions
-where not events = 'rain' -- Answer 41
+where not events = 'rain' -- Answer 41  Correct
 
 -- Q19 What was the total rainfall accumulation (inches) during the first 3 months of 2016?
 
@@ -222,7 +229,7 @@ select
 sum(Precipitation_In) as 'Accumulated Rainfall in Jan, Feb, Mar 2016' -- adds up all entries in the precipitation field (with a header)
 from Seattle_weather_conditions
 where month (date) in(1,2,3) -- limits the data to months 1,2 & 3
-and year (date) = 2016 -- limits the years to 2016 only
+and year (date) = 2016 -- limits the years to 2016 only  Correct
 
 
 -- Q20 On how many individual dates was fog reported?
@@ -233,7 +240,7 @@ select
 count (Events) as 'Number of days where fog was reported'
 
 from Seattle_weather_conditions
-where events like '%Fog%' --answer 29
+where events like '%Fog%' --answer 29  Correct
 
 
 
