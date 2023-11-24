@@ -78,7 +78,7 @@ select Date
 
 select cast(starttime as date)
 	from Seattle_cycles_trip
-		
+		-- On those snowy days what was the highest nmber of cycle trips which took place?
 
 		select  --top 1
 		count(t.trip_id) as 'Number of Trips'   --gives the (highest) number of cycle trips which took place
@@ -101,6 +101,8 @@ select cast(starttime as date)
 		where w.events like '%Snow%'				--filter to show snowy days
 		group by datepart(hh,t.starttime)			--group by (as there is the where filter)
 		order by 'Hour of Day'						--number of trips taken
+
+		-- How many of those cyclists in the snow were scheme members and how many were shoret term pass holders?
 		
 
 				
