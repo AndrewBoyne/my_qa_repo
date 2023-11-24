@@ -81,7 +81,7 @@ select cast(starttime as date)
 		
 
 		select  --top 1
-		count(t.trip_id) as 'Number of Trips'   --gives the (highest) number of cycle tripsa which took place
+		count(t.trip_id) as 'Number of Trips'   --gives the (highest) number of cycle trips which took place
 		,w.Date									--on date
 		from Seattle_weather_conditions as w	--we need the date to come from this table
 		join  Seattle_cycles_trip as t			--this is where the trip info comes from
@@ -90,6 +90,18 @@ select cast(starttime as date)
 		group by w.date							--if there a filter we need to select a grouping - in this case dates (as we want most trips on a given date)
 		order by 'Number of Trips' desc			--will put them in order of magnitude
 
+		--How many trips were taken on each hour of the day when there had been snow that day?
+
+	Select
+		datepart (hh,t.starttime) as 'Hour of Day'	--converts date format into hour
+		,count(t.trip_id) as 'Number of Trips'		--we need to know the number of trips taken per hour
+		from seattle_weather_conditions as w		--the date comes from this table
+		join seattle_cycles_trip as t				--trip info from this table
+		on w.date=cast(t.starttime as date)			--need the date formats to match as above
+		where w.events like '%Snow%'				--filter to show snowy days
+		group by datepart(hh,t.starttime)			--group by (as there is the where filter)
+		order by 'Hour of Day'						--number of trips taken
+		
 
 				
 
