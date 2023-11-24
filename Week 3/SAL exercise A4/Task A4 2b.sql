@@ -76,7 +76,22 @@ select Date
 	from Seattle_weather_conditions
 	where events like '%Snow%'             --Answer 5 days.  2014-11-29, 2015-11-28, 2015-12-14, 2016-01-03, 2016-01-15
 
-	cast(t.starttime as Date)
-	from Seattle_cycles_trip  as t
-	join Seattle_weather_conditions as w
-	on t.Date=w.Date
+select cast(starttime as date)
+	from Seattle_cycles_trip
+		
+
+		select  --top 1
+		count(t.trip_id) as 'Number of Trips'   --gives the (highest) number of cycle tripsa which took place
+		,w.Date									--on date
+		from Seattle_weather_conditions as w	--we need the date to come from this table
+		join  Seattle_cycles_trip as t			--this is where the trip info comes from
+		on w.date=cast(t.starttime as Date)		--so we can match the format of the date on trip (YMDHMS) to that on weather (YMD)
+		where w.events like '%Snow%'			--filter required to show days on which it rained
+		group by w.date							--if there a filter we need to select a grouping - in this case dates (as we want most trips on a given date)
+		order by 'Number of Trips' desc			--will put them in order of magnitude
+
+
+				
+
+
+		
