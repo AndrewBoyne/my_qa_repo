@@ -1,0 +1,820 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "b3c7999e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "84935e52",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "payments = np.array([6.99, 12.40, 75, 1.55, 1, 2, 3, 2, 1, 5])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "68a30d81",
+   "metadata": {},
+   "source": [
+    "effectively the above is a list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "aafd805b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 6.99 12.4  75.    1.55]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(payments)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "10612cb0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "payments = np.array([6.99, 12.40, 75, 1.55, 1, 2, 3, 2, 1, 5])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "a1ba7752",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 6.99 12.4  75.    1.55  1.    2.    3.    2.    1.    5.  ]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (payments)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "7d09eee1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "arr = np.array([1,3,5,7,9])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "b24489a6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 3 5 7 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(arr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "f21b6a5e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "arr2 = np.array([[1,3,5,7,], [2,4,6,8]])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "83d4104a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1 3 5 7]\n",
+      " [2 4 6 8]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(arr2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "cf23fa05",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2.ndim"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "a37f42bd",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(2, 4)"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2.shape"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bc3f9e0d",
+   "metadata": {},
+   "source": [
+    "shows number of rows and number of columns\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "66e3cec7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dtype('int32')"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2.dtype\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8c8da9b7",
+   "metadata": {},
+   "source": [
+    "32 bitinteger"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "0c7c9e35",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([1, 3, 5, 7, 9])"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.arange(1,10,2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d3b7b906",
+   "metadata": {},
+   "source": [
+    "the range of integers between 1 and 10 in increments of 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "adf7ad4b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([1. , 1.5, 2. , 2.5, 3. , 3.5, 4. , 4.5, 5. , 5.5, 6. , 6.5, 7. ,\n",
+       "       7.5, 8. , 8.5, 9. , 9.5])"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.arange(1,10,0.5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "ff16d0a8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "arr2 = np.array([[1,3,5,7,], [2,4,6,8], [7,8,9,10]])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "a1b1578b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 1  3  5  7]\n",
+      " [ 2  4  6  8]\n",
+      " [ 7  8  9 10]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(arr2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "cfe0f3a4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "arr3=arr2.reshape(4,3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "7e26247e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 1  3  5]\n",
+      " [ 7  2  4]\n",
+      " [ 6  8  7]\n",
+      " [ 8  9 10]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(arr3)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9a57a652",
+   "metadata": {},
+   "source": [
+    "changes the shape of the matrices"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "00635d58",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 6.99, 12.4 , 75.  ,  1.55,  1.  ,  2.  ,  3.  ,  2.  ,  1.  ,\n",
+       "        5.  ])"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "payments"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "7b4be8ba",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "transaction_fee = 1.00"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "be811444",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 5.99, 11.4 , 74.  ,  0.55,  0.  ,  1.  ,  2.  ,  1.  ,  0.  ,\n",
+       "        4.  ])"
+      ]
+     },
+     "execution_count": 31,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "payments-transaction_fee "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "afaebe74",
+   "metadata": {},
+   "source": [
+    "doesn't update the original array.  for that we's need to tell it - "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "cb2cd8a2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "updated_payments=payments-transaction_fee"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "9cd2da02",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 5.99, 11.4 , 74.  ,  0.55,  0.  ,  1.  ,  2.  ,  1.  ,  0.  ,\n",
+       "        4.  ])"
+      ]
+     },
+     "execution_count": 35,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "updated_payments"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "af5be51d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 5.99, 11.4 , 74.  ,  0.55,  0.  ,  1.  ,  2.  ,  1.  ,  0.  ,\n",
+       "        4.  ])"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "updated_payments"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e23b4c2b",
+   "metadata": {},
+   "source": [
+    "typing up then hitting tab brings up all existing arrays"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "ab20017e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ True,  True,  True, False, False, False, False, False, False,\n",
+       "       False])"
+      ]
+     },
+     "execution_count": 37,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "updated_payments>5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "1dd405f6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ True,  True, False,  True,  True,  True,  True,  True,  True,\n",
+       "        True])"
+      ]
+     },
+     "execution_count": 38,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "updated_payments<50"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "897e20f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ True,  True,  True,  True,  True,  True,  True,  True,  True,\n",
+       "        True])"
+      ]
+     },
+     "execution_count": 39,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "(updated_payments>5)| (updated_payments<50) # The | is or.  & is and"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "f6335d84",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "5"
+      ]
+     },
+     "execution_count": 40,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr[2]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "85a5358d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 7,  8,  9, 10])"
+      ]
+     },
+     "execution_count": 41,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2[2] # not just one digit as the third 'character' is a string"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "ef73d00b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[ 1,  3,  5,  7],\n",
+       "       [ 2,  4,  6,  8],\n",
+       "       [ 7,  8,  9, 10]])"
+      ]
+     },
+     "execution_count": 42,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "745d4320",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "9"
+      ]
+     },
+     "execution_count": 46,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2[2, 2] # asks to display the third entry on the third column (starts from zero as with Python)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "7bdbfa5e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 6.99, 12.4 , 75.  ,  1.55,  1.  ,  2.  ,  3.  ,  2.  ,  1.  ,\n",
+       "        5.  ])"
+      ]
+     },
+     "execution_count": 47,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "payments"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "id": "441bb2e2",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'true' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[48], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m payments[\u001b[43mtrue\u001b[49m:true]\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'true' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "payments[true:true]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "id": "6292a840",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ 6.99, 12.4 , 75.  ])"
+      ]
+     },
+     "execution_count": 49,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "payments[payments>5.0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "id": "8f70ab93",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([ True,  True,  True, False, False, False, False, False, False,\n",
+       "       False])"
+      ]
+     },
+     "execution_count": 50,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "payments>5.0"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9a10479d",
+   "metadata": {},
+   "source": [
+    "## Methods and Functions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "aaf64394",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "109.94"
+      ]
+     },
+     "execution_count": 54,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "payments.sum()\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "6700c5d8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[ 1,  3,  5,  7],\n",
+       "       [ 2,  4,  6,  8],\n",
+       "       [ 7,  8,  9, 10]])"
+      ]
+     },
+     "execution_count": 55,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "id": "4f0e0172",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([16, 20, 34])"
+      ]
+     },
+     "execution_count": 56,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2.sum(axis=1) # sums rows"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "id": "41266940",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([10, 15, 20, 25])"
+      ]
+     },
+     "execution_count": 57,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr2.sum(axis=0) # sums columns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "73c062de",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
