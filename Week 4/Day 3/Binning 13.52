@@ -3,7 +3,7 @@
   {
    "cell_type": "code",
    "execution_count": 48,
-   "id": "dbcdd8e6",
+   "id": "9e9ab376",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -19,7 +19,7 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "76a5ac78",
+   "id": "247fcafe",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -30,7 +30,7 @@
   {
    "cell_type": "code",
    "execution_count": 49,
-   "id": "ffc8cbb1",
+   "id": "07ea9b34",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -44,7 +44,7 @@
   {
    "cell_type": "code",
    "execution_count": 50,
-   "id": "60450abf",
+   "id": "b14141ae",
    "metadata": {},
    "outputs": [
     {
@@ -122,7 +122,7 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "8355ba2c",
+   "id": "dd3735cf",
    "metadata": {},
    "outputs": [
     {
@@ -146,7 +146,7 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "id": "be5a0eff",
+   "id": "fb701905",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -160,7 +160,7 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "d4eee718",
+   "id": "e97a7658",
    "metadata": {},
    "outputs": [
     {
@@ -237,7 +237,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b59e7fdb",
+   "id": "0f9c6c8b",
    "metadata": {},
    "source": [
     "# Missing Data \n"
@@ -246,7 +246,7 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "id": "a83dcb5a",
+   "id": "bd2c4eaa",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -256,7 +256,7 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "id": "d8d7f5a1",
+   "id": "47cbc1cb",
    "metadata": {},
    "outputs": [
     {
@@ -313,7 +313,7 @@
   {
    "cell_type": "code",
    "execution_count": 21,
-   "id": "3a349354",
+   "id": "ccab96d0",
    "metadata": {},
    "outputs": [
     {
@@ -391,7 +391,7 @@
   {
    "cell_type": "code",
    "execution_count": 24,
-   "id": "4a16f11e",
+   "id": "e77230bf",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -401,7 +401,7 @@
   {
    "cell_type": "code",
    "execution_count": 25,
-   "id": "1994b336",
+   "id": "ca0bc781",
    "metadata": {},
    "outputs": [
     {
@@ -458,7 +458,7 @@
   {
    "cell_type": "code",
    "execution_count": 26,
-   "id": "1101f94f",
+   "id": "cadd6927",
    "metadata": {},
    "outputs": [
     {
@@ -536,7 +536,7 @@
   {
    "cell_type": "code",
    "execution_count": 27,
-   "id": "8db99342",
+   "id": "4bbb118b",
    "metadata": {},
    "outputs": [
     {
@@ -607,7 +607,7 @@
   {
    "cell_type": "code",
    "execution_count": 37,
-   "id": "260864d1",
+   "id": "781cf2df",
    "metadata": {},
    "outputs": [
     {
@@ -688,7 +688,7 @@
   {
    "cell_type": "code",
    "execution_count": 38,
-   "id": "691f3328",
+   "id": "7c72c66b",
    "metadata": {},
    "outputs": [
     {
@@ -713,7 +713,7 @@
   {
    "cell_type": "code",
    "execution_count": 39,
-   "id": "a7529a9a",
+   "id": "3511cb66",
    "metadata": {},
    "outputs": [
     {
@@ -791,7 +791,7 @@
   {
    "cell_type": "code",
    "execution_count": 42,
-   "id": "1bfefeb3",
+   "id": "a36cae7d",
    "metadata": {},
    "outputs": [
     {
@@ -815,7 +815,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "23a60828",
+   "id": "ff643fcf",
    "metadata": {},
    "source": [
     "# Binning"
@@ -824,7 +824,7 @@
   {
    "cell_type": "code",
    "execution_count": 58,
-   "id": "08eeee35",
+   "id": "5c5aafd6",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -836,7 +836,7 @@
   {
    "cell_type": "code",
    "execution_count": 59,
-   "id": "5ef4a25d",
+   "id": "24d93d00",
    "metadata": {},
    "outputs": [
     {
@@ -921,7 +921,7 @@
   {
    "cell_type": "code",
    "execution_count": 62,
-   "id": "3ee98989",
+   "id": "7bfd33de",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -931,7 +931,7 @@
   {
    "cell_type": "code",
    "execution_count": 60,
-   "id": "f8cbda2c",
+   "id": "fbb25cff",
    "metadata": {},
    "outputs": [
     {
@@ -965,7 +965,7 @@
   {
    "cell_type": "code",
    "execution_count": 63,
-   "id": "2a62b0cf",
+   "id": "1158c3f1",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -976,7 +976,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "91a79964",
+   "id": "e24d6a3b",
    "metadata": {},
    "outputs": [],
    "source": []
@@ -984,7 +984,7 @@
   {
    "cell_type": "code",
    "execution_count": 64,
-   "id": "a50b3dd7",
+   "id": "7c97c9b2",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -994,7 +994,7 @@
   {
    "cell_type": "code",
    "execution_count": 65,
-   "id": "cb49e8d3",
+   "id": "dce96b60",
    "metadata": {},
    "outputs": [
     {
@@ -1184,7 +1184,7 @@
   {
    "cell_type": "code",
    "execution_count": 67,
-   "id": "9a2309a4",
+   "id": "16cac49d",
    "metadata": {},
    "outputs": [
     {
@@ -1213,7 +1213,7 @@
   {
    "cell_type": "code",
    "execution_count": 68,
-   "id": "64813bf8",
+   "id": "3d873d12",
    "metadata": {},
    "outputs": [
     {
@@ -1235,13 +1235,13 @@
    "source": [
     "pd.cut(x=df1['Income'],\n",
     "      bins=[0, 20000, 40000, 60000, 80000, 100000]\n",
-    "      ).value_counts() # shows"
+    "      ).value_counts() # shows the number of entries in each bin"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "d0fe69ce",
+   "id": "3c9470df",
    "metadata": {},
    "outputs": [],
    "source": []
